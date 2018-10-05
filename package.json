@@ -1,0 +1,56 @@
+{
+  "name": "api-clientsync",
+  "version": "1.0.0",
+  "description": "api",
+  "keywords": [
+    "loopback-application",
+    "loopback"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.9"
+  },
+  "scripts": {
+    "build:all-dist": "npm run build:dist8 && npm run build:dist10",
+    "build:apidocs": "lb-apidocs",
+    "build": "lb-tsc",
+    "build:dist8": "lb-tsc es2017",
+    "build:dist10": "lb-tsc es2018",
+    "build:watch": "lb-tsc --watch  --watch --preserveWatchOutput",
+    "clean": "lb-clean dist*",
+    "lint": "npm run tslint",
+    "lint:fix": "npm run tslint:fix",
+    "tslint": "lb-tslint",
+    "tslint:fix": "npm run tslint -- --fix",
+    "prestart": "npm run build",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "",
+  "license": "",
+  "files": [
+    "README.md",
+    "index.js",
+    "index.d.ts",
+    "dist*/src",
+    "dist*/index*",
+    "src"
+  ],
+  "dependencies": {
+    "@loopback/boot": "^0.14.4",
+    "@loopback/context": "^0.13.0",
+    "@loopback/core": "^0.11.15",
+    "@loopback/openapi-v3": "^0.15.3",
+    "@loopback/dist-util": "^0.3.7",
+    "@loopback/repository": "^0.20.0",
+    "@loopback/rest": "^0.25.3",
+    "@loopback/service-proxy": "^0.8.9",
+    "nodemon": "^1.18.4"
+  },
+  "devDependencies": {
+    "@loopback/build": "^0.7.5",
+    "@types/node": "^10.11.2"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "dsMain",
+  "connector": "memory",
+  "localStorage": "",
+  "file": "./dsMain.data"
+}
